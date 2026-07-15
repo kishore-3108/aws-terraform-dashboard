@@ -1,0 +1,50 @@
+export default function Dashboard() {
+  const data = {
+    vpc_id: "vpc-014d6c37ce237a2fe",
+    ec2_public_ip: "13.235.133.195",
+    ec2_instance_id: "i-02d23b59e706f4ea6",
+    public_subnets: ["subnet-04a746b6c", "subnet-01c66f4a"],
+    private_subnets: ["subnet-0778622ce", "subnet-0e56fdc4e"],
+    region: "ap-south-1",
+    status: "Active"
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-8">
+      <h1 className="text-4xl font-bold mb-2">AWS Terraform Infrastructure</h1>
+      <p className="text-gray-400 mb-8">Provisioned with 100% IaC - No Console Clicks</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div className="bg-gray-800 p-6 rounded-xl border-green-500">
+          <p className="text-gray-400">Status</p>
+          <p className="text-2xl font-bold text-green-400">{data.status}</p>
+        </div>
+
+        <div className="bg-gray-800 p-6 rounded-xl">
+          <p className="text-gray-400">EC2 Public IP</p>
+          <p className="text-xl font-mono">{data.ec2_public_ip}</p>
+          <a href={`http://${data.ec2_public_ip}`} target="_blank" className="text-blue-400 text-sm">Open in Browser →</a>
+        </div>
+
+        <div className="bg-gray-800 p-6 rounded-xl">
+          <p className="text-gray-400">Region</p>
+          <p className="text-xl">{data.region}</p>
+        </div>
+      </div>
+
+      <div className="bg-gray-800 p-6 rounded-xl mt-6">
+        <h2 className="text-2xl font-bold mb-4">Resource Details</h2>
+        <p><b>VPC ID:</b> {data.vpc_id}</p>
+        <p><b>Instance ID:</b> {data.ec2_instance_id}</p>
+        <p><b>Public Subnets:</b> {data.public_subnets.length}</p>
+        <p><b>Private Subnets:</b> {data.private_subnets.length}</p>
+      </div>
+
+      <div className="mt-8 p-4 bg-red-900/30 border-red-500 rounded-lg">
+        <p className="font-bold">⚠️ Danger Zone</p>
+        <p className="text-sm">To destroy infra: `terraform destroy`</p>
+      </div>
+    </div>
+  )
+}
