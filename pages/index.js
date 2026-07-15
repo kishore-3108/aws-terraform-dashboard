@@ -54,15 +54,19 @@ export default function Home() {
 
       </div>
 
-      {/* ARCHITECTURE IMAGE */}
-      <div style={{maxWidth:'1000px', margin:'40px auto', textAlign:'center'}}>
-        <h2>Architecture Diagram</h2>
-        <img 
-          src="https://i.imgur.com/8Km9tLL.png" 
-          alt="AWS Architecture" 
-          style={{width:'100%', borderRadius:'12px', border:'1px solid #334155'}}
-        />
-        <p style={{color:'#94a3b8', fontSize:'12px'}}>Internet → EC2 Instance + S3 Bucket</p>
+      {/* COMMANDS SECTION - DIAGRAM BADULU IDHI PETTAM */}
+      <div style={{maxWidth:'1000px', margin:'40px auto', background:'#1e293b', padding:'20px', borderRadius:'12px', border:'1px solid #334155'}}>
+        <h2>🛠️ Terraform Commands</h2>
+        <div style={{background:'#0f172a', padding:'15px', borderRadius:'8px', fontFamily:'monospace'}}>
+          <p># Initialize</p>
+          <p>terraform init</p>
+          <br/>
+          <p># Create Infrastructure</p>
+          <p>terraform apply</p>
+          <br/>
+          <p># Destroy to save money</p>
+          <p style={{color:'#dc2626'}}>terraform destroy</p>
+        </div>
       </div>
 
       <footer style={{textAlign:'center', marginTop:'50px', color:'#64748b'}}>
