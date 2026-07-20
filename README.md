@@ -16,7 +16,7 @@ The dashboard shows live AWS resources created via Terraform:
 - **Terraform Info**: Provider, State, Resource count, Last Deployed
 
 ### ⚡ Key Features
-- **IaC with Terraform**: Provisioned `t2.micro EC2` + `S3 Bucket` in `us-east-1`
+- **IaC with Terraform**: Provisioned `t3.micro EC2` + `S3 Bucket` in `us-east-1`
 - **Live Monitoring**: Fetches real AWS data using AWS SDK v3
 - **Cost Awareness**: Shows estimated monthly cost + warning banner
 - **DevOps Best Practice**: Includes `terraform destroy` command to avoid charges
